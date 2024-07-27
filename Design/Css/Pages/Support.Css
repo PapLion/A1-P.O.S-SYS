@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Noto%20Sans%20Balinese:700|Noto%20Sans%20Balinese:400');
+
+body {
+  font-family: 'Noto Sans Balinese', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background-color: var(--background);
+}
+
+:root{
+    --text: #090314;
+--background: #f8f5fe;
+--primary: #7b2ae4;
+--secondary: #f088db;
+--accent: #ea5aa2;
+
+}
+
+hr {
+    width: 100%;
+    height: 100px;
+}
+
+.page-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+aside {
+  width: 10%;
+  background-color: var(--primary);
+  border-right: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.lgo-img {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.asd-icons,
+.asd-icons-footer,
+.asd-icons-footer-two {
+  font-size: 25px;
+  margin: 15px 0;
+  cursor: pointer;
+  transition: all 0.25s ease-in; 
+  width: 40px; 
+  height: 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asd-icons:hover,
+.asd-icons-footer:hover {
+  background-color: black;
+  color: white;
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  transition: all 0.25s ease-in;
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--accent);
+}
+
+header {
+  flex: 0 0 10%;
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 4px solid black;
+}
+
+.header-prah {
+  color: var(--text);
+}
+
+.rounded-circle img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+article {
+  flex: 1;
+    margin: 0;
+  box-sizing: border-box;
+}
+textarea,
+button{
+  width: 100%;
+}
+.Question-Container{
+  background-color: var(--background);
+}
