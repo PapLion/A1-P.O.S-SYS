@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Noto%20Sans%20Balinese:700|Noto%20Sans%20Balinese:400');
 
+:root{
+    --text: #090314;
+--background: #f8f5fe;
+--primary: #7b2ae4;
+--secondary: #f088db;
+--accent: #ea5aa2;
+}
+
 body {
   font-family: 'Noto Sans Balinese', sans-serif;
   font-weight: 400;
@@ -7,20 +15,18 @@ body {
   height: 100vh;
   display: flex;
   background-color: var(--background);
-}
-
-:root{
-    --text: #090314;
---background: #f8f5fe;
---primary: #7b2ae4;
---secondary: #f088db;
---accent: #ea5aa2;
-
+  overflow: hidden;
+  color:var(--text)
 }
 
 hr {
     width: 100%;
     height: 100px;
+}
+
+a{
+  text-decoration: none;
+  color:var(--text);
 }
 
 .page-layout {
@@ -39,12 +45,10 @@ aside {
   padding: 20px;
   box-sizing: border-box;
 }
-
 .lgo-img {
   margin-top: 15px;
   margin-bottom: 20px;
 }
-
 .asd-icons,
 .asd-icons-footer,
 .asd-icons-footer-two {
@@ -58,14 +62,13 @@ aside {
   align-items: center;
   justify-content: center;
 }
-
 .asd-icons:hover,
 .asd-icons-footer:hover {
   background-color: black;
   color: white;
   width: 50px; 
-  height: 50px; 
-  border-radius: 50%; 
+  height: 100px; 
+  border-radius: 100px; 
   transition: all 0.25s ease-in;
 }
 
@@ -86,11 +89,6 @@ header {
   box-sizing: border-box;
   border-bottom: 4px solid black;
 }
-
-.header-prah {
-  color: var(--text);
-}
-
 .rounded-circle img {
   width: 40px;
   height: 40px;
@@ -98,7 +96,9 @@ header {
 }
 
 article {
-  flex: 1;
-    margin: 0;
+  margin: 0;
   box-sizing: border-box;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 10px;
 }
