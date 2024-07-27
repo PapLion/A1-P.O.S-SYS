@@ -38,21 +38,45 @@
             </header>
             <article class="content">
                 <div class="row">
-                    <h1 class="text-center col-12">Support</h1>
-                    <form action="">
-                        <textarea name="message" id="message" class="d-block mb-5"></textarea>
-                    
-                        <button type="submit" class="d-block mt-5">Enviar</button>
-                    </form>
+                    <h1 class="text-center col-12 mt-3">Support</h1>
+                    <hr class="article-hr">
+                    <form>
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        
+                        <label for="attachments">Adjuntar archivos:</label>
+                        <input type="file" id="attachments" name="attachments" multiple>
+                        
+                        <label for="problem">Tipo de problema:</label>
+                        <input type="text" id="problem" name="problem" placeholder="Ingresa el tipo de problema: ej(bug)" class="mb-4">
+                        
+                        <button type="submit" class="d-block btn btn-secondary">Enviar</button>
+                    </form>                    
                 </div>
-                <hr>
+                <hr class="article-hr">
                 <div class="row">
                     <h1 class="text-center">Preguntas Frecuentes</h1>
-                    <hr>
-                    <div class="Question-Container">
-                        <h3 class="d-sm-inline">Su aplicacion es buena?</h3>
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
+                    <hr class="article-hr">
+                    <a href="#"><div class="Question-Container ms-1 mb-4">
+                        <h4 class="d-inline-block col-10 p-1 ps-3 pt-2">Su aplicacion es buena?</h4>
+                        <i class="fa-solid fa-plus d-inline-block i-footer"></i>
+                    </div></a>
+                    <a href="#"><div class="Question-Container ms-1 mb-4">
+                        <h4 class="d-inline-block col-10 p-1 ps-3 pt-2">Su aplicacion es buena?</h4>
+                        <i class="fa-solid fa-plus d-inline-block i-footer"></i>
+                    </div></a>
+                    <a href="#"><div class="Question-Container ms-1 mb-4">
+                        <h4 class="d-inline-block col-10 p-1 ps-3 pt-2">Su aplicacion es buena?</h4>
+                        <i class="fa-solid fa-plus d-inline-block i-footer"></i>
+                    </div></a>
+                    <a href="#"><div class="Question-Container ms-1 mb-4">
+                        <h4 class="d-inline-block col-10 p-1 ps-3 pt-2">Su aplicacion es buena?</h4>
+                        <i class="fa-solid fa-plus d-inline-block i-footer"></i>
+                    </div></a>
+                    <a href="#"><div class="Question-Container ms-1 mb-4">
+                        <h4 class="d-inline-block col-10 p-1 ps-3 pt-2">Su aplicacion es buena?</h4>
+                        <i class="fa-solid fa-plus d-inline-block i-footer"></i>
+                    </div></a>
                 </div>
             </article>
         </div>
