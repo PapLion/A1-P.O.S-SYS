@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Noto%20Sans%20Balinese:700|Noto%20Sans%20Balinese:400');
+
+body {
+  font-family: "Font Awesome 6 Brands";
+}
+
+h1, h2, h3, h4, h5, i, p, li {
+  font-family: "Font Awesome 6 Brands";
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+
+:root{
+  --text: #090314;
+--background: #f8f5fe;
+--primary: #7b2ae4;
+--secondary: #f088db;
+--accent: #ea5aa2;
+}
+
+*{
+  margin: 0;
+  padding: 0;    
+}
+body{
+    background-color: var(--background);
+    color:var(--text);
+  }
+.header-link:hover{
+    background-color: #fff;
+    color:#000;
+    transition: color 0.2s ease-in-out;
+  }
+  a{
+    color:var(--text);
+    border-radius: 5px;
+  }
+
+  .home, 
+  .pos,
+  .pricings{
+    height: 100vh;
+  }
+  .resources{
+    height: 70vh;
+    background-color: var(--primary);
+  }
+  .faq{
+    height: 75vh;
+  }
+
+  .home{
+    background-color: hsl(300, 60%, 92.2%)   ;
+    backdrop-filter: blur(100PX);
+  }
+
+  .Resource-Container{
+    background-color: var(--background);
+    border-radius: 10px;
+  }
+  .Resource-Container:hover{
+    background-color: rgb(202, 199, 199);
+    transition: ease-in 0.25s;
+    cursor: pointer;
+  }
+
+  .prices-title{
+    width: 100%
+  }
+  .precies-container-container,
+  .precies-container{
+    width: 80%;
+    height: 80%;
+    background-color: var(--accent);
+    border-radius: 25px;
+  }
+  .precies-item{
+    background-color: hsl(300, 60%, 92.2%)   ;
+    width: 30%;
+    height: 80%;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .prices-item-h2{
+    margin-top:10%;
+  }
+  .prices-item-h3{
+    margin-bottom: 20%;
+  }
+  ul{
+    list-style: none;
+  }
+
+  .Question-Container{
+    background-color: var(--background);
+    border-radius: 10px;
+  }
+  .Question-Container:hover{
+  background-color: rgb(202, 199, 199);
+  transition: ease-in 0.25s;
+  cursor: pointer;
+  }
+  .i-footer{
+    padding-left: 100px;
+    border-left: 2px solid black;
+  }
+
+  .fot-icons{
+    font-size: 30px;
+  }
+  .fot-icons:hover{
+    color: var(--accent);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  @media (max-width: 850px) {
+    .header-ul {
+      display: none;
+    }
+    .dropdown-nav {
+      display: block;
+    }
+    .lgo-img{
+        display: none;
+    }
+}
+  
+  @media (min-width: 851px) {
+    .dropdown-nav {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 815px) {
+    .home-link {
+      width: 100%;
+      text-align: center;
+    }
+  }
