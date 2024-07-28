@@ -127,16 +127,3 @@ input[type="file"] {
 .article-hr{
     height: 30px;
   }
-.Question-Container{
-    background-color: var(--background);
-    border-radius: 10px;
-  }
-.Question-Container:hover{
-  background-color: rgb(202, 199, 199);
-  transition: ease-in 0.25s;
-  cursor: pointer;
-}
-.i-footer{
-    padding-left: 100px;
-    border-left: 2px solid black;
-  }
