@@ -40,7 +40,7 @@ body{
   }
 
   main{
-    height: 90vh;
+    height: 90%;
   }
 
 .header-link:hover{
@@ -58,6 +58,33 @@ body{
   }
   .interactive-nav{
     border-right: 1px solid black;
+  }
+  
+  .asd-list{
+    list-style-type: none;
+    padding-left: 0;
+    cursor: pointer;
+  }
+  .asd-links{
+    background-color: white;
+    padding: 15px;
+  }
+  .asd-links:hover{
+    background-color:#000;
+    color: #fff;
+    transition: ease-in 0.25s;
+  }
+
+  .Car-Item{
+    background-color: var(--background);
+  }
+.i-footer{
+    padding-left: 50px;
+    padding-right: 50px;
+    border-right: 2px solid black;
+  }
+  .i-footer-item{
+    font-size: 40px;
   }
 
   @media (max-width: 850px) {
