@@ -3,8 +3,8 @@ from functions_jwt import *
 from fastapi import APIRouter, Header
 from models import *
 from fastapi import HTTPException
-from search import *
-from auth_db import *
+from queries.searchDB import *
+from queries.authDB import *
 from encryption import *
 
 auth_rts = APIRouter()
@@ -26,9 +26,9 @@ async def login_form(data: login) -> str:
     Si todo es correcto, procede a generarse y enviarse el token al cliente.
     """
 
-    get_password: str|bool = await login_query(data.email)
+    get_password: str|bool = await login_query(data.user_email)
 
-    verify_password: bool = check_data(get_password, data.password)
+    verify_password: bool = check_data(get_password, data.user_password)
     
     if not get_password:
         raise HTTPException(status_code=400, detail="El correo electrónico es incorrecto...")
@@ -56,9 +56,9 @@ async def register_form(data: register) -> str:
     Si ninguno de los casos anteriores se dio, se procede a crear la cuenta.
     """
 
-    get_nickn: tuple|bool = await srch_nickN(data.nick_name)
+    get_nickn: tuple|bool = await srch_nickN(data.user_name)
 
-    get_email: tuple|bool = await srch_email(data.email)
+    get_email: tuple|bool = await srch_email(data.user_email)
 
     if get_email and get_nickn:
         raise HTTPException(status_code=409, detail="El nickname y email ya están en uso.")
@@ -69,12 +69,12 @@ async def register_form(data: register) -> str:
     if get_email:
         raise HTTPException(status_code=409, detail="El email ya está en uso.")
     
-    if data.password != data.confirm_password:
+    if data.user_password != data.confirm_password:
         raise HTTPException(status_code=409, detail="Las contraseñas ingresadas no son iguales.")
     
-    await register_query(email=data.email, 
-                         nick_name=data.nick_name,
-                         password=encrypt_data(data.password))
+    await register_query(user_email=data.user_email, 
+                         user_name=data.user_name,
+                         user_password=encrypt_data(data.user_password))
     raise HTTPException(status_code=200, detail="Registro exitoso.")
 
 

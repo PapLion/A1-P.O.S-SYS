@@ -4,13 +4,13 @@ from database import connect_database
 
 
 # Search a user with the nick name in the db
-async def srch_nickN(nick_name) -> tuple:
+async def srch_nickN(user_name) -> tuple:
     # Connecto to database
     conn: aiomysql.connection = await connect_database()
 
     async with conn.cursor() as cursor:
-        query: str = "SELECT * FROM users WHERE nick_name = %s"
-        await cursor.execute(query, (nick_name,))
+        query: str = "SELECT * FROM users WHERE user_name = %s"
+        await cursor.execute(query, (user_name,))
         response = await cursor.fetchone()
         if not response:
             return False
@@ -33,7 +33,7 @@ async def srch_name(user_name) -> tuple | bool:
 async def srch_email(correo) -> tuple | bool:
     conn: aiomysql.connection = await connect_database()
     async with conn.cursor() as cursor:
-        query: str = "SELECT * FROM users WHERE email = %s"
+        query: str = "SELECT * FROM users WHERE user_email = %s"
         await cursor.execute(query, (correo,))
         response = await cursor.fetchone()
         if not response:
@@ -74,12 +74,12 @@ async def email_password(email: str, password: str) -> str | bool:
 async def nick_id(user_id) -> str | bool:
     conn: aiomysql.connection = await connect_database()
     async with conn.cursor() as cursor:
-        query: str = "SELECT nick_name FROM users WHERE user_id = %s"
+        query: str = "SELECT user_name FROM users WHERE user_id = %s"
         await cursor.execute(query, (user_id))
         response = await cursor.fetchone()
         if not response:
             return False
-        return response['nick_name']
+        return response['user_name']
 
 
 # Get full data with email and password.
