@@ -1,7 +1,7 @@
 import aiomysql
 from database import connect_database
 
-async def insert(user_id: str, item_name:str, item_price, item_lot) -> bool:
+async def insert_item(user_id: int, item_name:str, item_price:float, item_lot:int) -> bool:
     conn: aiomysql.Connection = await connect_database()
     try:
         async with conn.cursor() as cursor:

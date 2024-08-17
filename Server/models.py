@@ -10,13 +10,9 @@ class login(BaseModel):
     user_email: str
     user_password: str
 
-class post(BaseModel):
-    token: str
-    newPostContent: str
-    archive: str | None = None
 
 class item(BaseModel):
-    user_id: str
+    user_id: int
     item_name: str
-    item_price: int
+    item_price: float
     item_lot: int

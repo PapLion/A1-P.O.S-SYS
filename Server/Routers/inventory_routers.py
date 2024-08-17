@@ -7,7 +7,7 @@ inventory_rts = APIRouter()
 
 @inventory_rts.post("/inventory")
 async def get_inventory(itm: item):
-    response_db = await insert(user_id=itm.user_id,
+    response_db = await insert_item(user_id=itm.user_id,
                          item_name=itm.item_name,
                          item_price=itm.item_price,
                          item_lot=itm.item_lot)
