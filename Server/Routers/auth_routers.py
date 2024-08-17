@@ -56,24 +56,27 @@ async def register_form(data: register) -> str:
     Si ninguno de los casos anteriores se dio, se procede a crear la cuenta.
     """
 
-    get_nickn: tuple|bool = await srch_nickN(data.user_name)
+    user_data: dict|bool = await user_data(data.user_name)
 
-    get_email: tuple|bool = await srch_email(data.user_email)
+    user_name_get: str|bool = user_data['user_name']
 
-    if get_email and get_nickn:
+    user_email_get: str|bool = user_data['user_email']
+    
+
+    if user_email_get and user_name_get:
         raise HTTPException(status_code=409, detail="El nickname y email ya están en uso.")
 
-    if get_nickn:
+    if user_name_get:
         raise HTTPException(status_code=409, detail="El nickname ya está en uso.")
 
-    if get_email:
+    if user_email_get:
         raise HTTPException(status_code=409, detail="El email ya está en uso.")
     
     if data.user_password != data.confirm_password:
         raise HTTPException(status_code=409, detail="Las contraseñas ingresadas no son iguales.")
     
-    await register_query(user_email=data.user_email, 
-                         user_name=data.user_name,
+    await register_query(user_email_get=data.user_email, 
+                         user_name_get=data.user_name,
                          user_password=encrypt_data(data.user_password))
     raise HTTPException(status_code=200, detail="Registro exitoso.")
 
@@ -82,4 +85,6 @@ async def register_form(data: register) -> str:
 async def token_verify(Authorization: str = Header(None)):
     token = Authorization.split(" ")[1]
     return validate_token(token=token, output=True)
+
+
 
